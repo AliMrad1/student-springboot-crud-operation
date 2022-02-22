@@ -12,6 +12,7 @@ import java.util.Optional;
 public class StudentService {
 
     private final StudentRepository studentRepository;
+
     @Autowired
     public StudentService(StudentRepository studentRepository) {
         this.studentRepository = studentRepository;
@@ -20,6 +21,7 @@ public class StudentService {
     public List<Student> getStudents(){
         return studentRepository.findAll();
     }
+
 
     public void addNewStudent(Student student) {
         Optional<Student> optionalStudent = studentRepository.findStudentByEmail(student.getEmail());

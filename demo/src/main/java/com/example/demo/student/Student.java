@@ -6,7 +6,6 @@ import java.time.Period;
 
 //our model
 @Entity
-@Table(name = "student")
 public class Student {
 
     @Id
@@ -16,7 +15,7 @@ public class Student {
             allocationSize = 1
     )
     @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
+            strategy = GenerationType.IDENTITY,
             generator = "student_sequence"
     )
     private Long id;
